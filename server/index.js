@@ -1,24 +1,25 @@
 const express = require('express');
 
 const {
-    getDogs,
-    addDog
+    read,
+    create,
+    update,
+    updateColor,
+    remove,
+    removeColor,
 } = require('./Controller');
 
 const app = express();
 
-const PORT = 6606;
-
 app.use(express.json());
 
-app.get('/api/dogs', getDogs);
+app.get('/api/projects', read);
+app.post('/api/project', create);
+app.put('/api/project/:id', update);
+app.delete('/api/project/:id', remove);
 
-app.post('/api/dogs', addDog);
+app.put('/api/color/:id', updateColor);
+app.delete('/api/color/:id', removeColor);
 
-console.log('hellow')
+const PORT = 6600;
 app.listen(PORT, () => console.log(`Listening on Port ${PORT}`));
-
-// app.get('/api/random', function (req, res) {
-//     var err = null;
-//     res.redirect('/id?hex=' + cutils.getRandomHex().substring(1));
-// });

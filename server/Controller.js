@@ -1,48 +1,80 @@
+const projects = [
+  {
+    id: 0,
+    projectName: "Space Jam - Rollback to 1996",
+    createdBy: "Nick",
+    description: "Historical restoration project for landmark web site that was spacejam.com. We need to preserve these pristine early World Wide Wed artifacts for generations to come",
+    color: [],
+  },
+  {
+    id: 1,
+    projectName: "Site Template Redo",
+    createdBy: "Billie Eilish",
+    description: "So you\'re a tough guy Like it really rough guy Just can\'t get enough guy Chest always so puffed guy",
+    color: [],
+  },
+];
 
-const dogs = [{
-  name: 'Spot',
-  breed: 'Pug',
-  age: 5,
-  image: 'https://pawleaks.com/wp-content/uploads/2020/08/Pug-in-bed.png',
-  bio: 'Loves to sleep with her pet tiger, but only after you tuck her in.',
-  id: 1,
-  isFavorite: false,
-}];
 
 let id = 2;
 
 
 module.exports = {
-  getDogs: (req, res) => {
-    console.log('YOU MADE THE REQUEST SUCCESSFULLY!');
-    res.status(200).send(dogs);
+  read: (req, res) => {
+    res.status(200).send(projects);
+  },
+  create: (req, res) => {
+    const { projectName, createdBy, description } = req.body;
+    const newProject = {
+      id,
+      projectName,
+      createdBy,
+      description,
+      color: [],
+    };
+    id++;
+    projects.push(newProject);
+
+    res.status(200).send(projects);
   },
 
-
-  
-  addDog: (req, res) => {
-    const {
-      name,
-      breed,
-      age,
-      image,
-      bio
-    } = req.body;
-
-    const newDog = {
-      name,
-      breed,
-      age,
-      image,
-      bio,
-      isFavorite: false,
+  update: (req, res) => {
+    const { id } = req.params;
+    const { projectName, createdBy, description } = req.body;
+    const colors = projects[id].color.map(color => color)
+    // const index = projects.filter((project) => project.id == id)
+    projects[id] = {
       id,
+      projectName,
+      createdBy,
+      description,
+      color: colors,
     }
+    res.status(200).send(projects);
+  },
 
-    id++;
+  remove: (req, res) => {
+    const { id } = req.params;
+    // const index = projects.findIndex((project) => project.id == id)
+    projects.splice(id, 1)
+    res.status(200).send(projects)
 
-    dogs.push(newDog);
+  },  
 
-    res.status(200).send(dogs);
-  }
-}
+  updateColor: (req, res) => {
+    const { id } = req.params;
+    const { colorName, colorValue } = req.body;
+    // const index = projects.findIndex((project) => project.id == id)
+    projects[id].color.push({name:colorName, value: colorValue})
+    res.status(200).send(projects);
+  },
+
+  removeColor: (req, res) => {
+    const { id } = req.params;
+    const { removeColor } = req.query;
+    // const index = projects.findIndex((project) => project.id == id)
+    const colorIndex = projects[id].color.findIndex(color => color.name == removeColor)
+    projects[id]["color"].splice(colorIndex,1)
+    res.status(200).send(projects)
+  },  
+};
