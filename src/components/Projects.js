@@ -13,29 +13,34 @@ class Projects extends Component {
     }    
     render() {
         return (
-            <div className="projects-des">
+            <div className="projects-des text-light d-flex p-2">
+                
+                <div class="col-md-6">
                 <ul>
-                    <li>ID: {this.props.projectInfo?.id}</li>
                     <li>Project Name: {this.props.projectInfo?.projectName}</li>
                     <li>Created By: {this.props.projectInfo?.createdBy}</li>
                     <li>Description: {this.props.projectInfo?.description}</li>
+                    <li>Notes: {this.props.projectInfo?.notes}</li>
+                    <li>End Date: {this.props.projectInfo?.endDate}</li>
                 </ul>
-                {this.props.projectInfo?.color.map((project, i) => {
+                </div>
+                <div class="col-md-6">
+                {this.props.projectInfo?.color.map((color, i) => {
                     return (
                         <section key={i}>
-                            <div className="project-colors-container">
+                            <div className="project-colors-container" class="col-md-6">
                             <button 
-                                onClick={ () => this.handleClick( project.name) }>
-                                <span>{project.name}</span>
-                                <span>{project.value}</span>
+                                onClick={ () => this.handleClick( color.name) }>
+                                <span>{color.name}</span>
+                                <span>{color.value}</span>
                             </button>
                             </div>
                         </section>
                     )
                 })}
 
+                </div>
             </div>
-
         )
     }
 }
