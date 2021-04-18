@@ -17,7 +17,7 @@ export default class Colors extends Component {
     }
 
     let colorArray = [];
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 6; i++) {
       axios.get(`https://www.thecolorapi.com/id?hex=${radomValue()}`)
         .then((response) => {
           colorArray.push(response.data)
@@ -45,7 +45,7 @@ export default class Colors extends Component {
           <div className="tile-card">
           <img className="color-image" alt={color.name.value} src={color.image.named} />
           
-          <span onClick={ () => this.handleClick(color.name.value, color.name.closest_named_hex) } class="fa fa-lock ml-2 text-light"></span> 
+          <span onClick={ () => this.handleClick(color.name.value, color.name.closest_named_hex) } class="fa fa-unlock-alt ml-2 text-light"></span> 
           <span onClick={ () => this.props.templateColor(color.name.closest_named_hex) } class="fa fa-eyedropper ml-3 text-light"></span>
           <span class="ml-3 text-light">{color.name.closest_named_hex}</span>
           </div>
@@ -62,16 +62,14 @@ export default class Colors extends Component {
   }
 
   render() {
-
     return (
-      <div>
+      <div className="mb-2">
         <div class="palette-color-container">
-          
           {this.renderColors()}        
         </div>
-        <div className="project-pal-nav">
-              <div ><button className="btn btn-default" onClick={this.getColors}>Get Colors</button></div>
-              <div className="project-dropdown"><button className="btn btn-default" onClick={this.props.clearTemplateColor}>Reset Colors</button></div>
+        <div className="project-pal-nav ml-auto mr-auto">
+              <div className="col-md-6 text-center"><button className="btn btn-default col-md-6 btn-round" onClick={this.getColors}><i class="fa fa-refresh mr-2 btn-custom"></i>Get Colors</button></div>
+              <div className="col-md-6 text-center"><button className="btn btn-default col-md-6 btn-round" onClick={this.props.clearTemplateColor}><i class="fa fa-times mr-2 btn-custom"></i>Reset</button></div>
         </div>            
       </div>
     )

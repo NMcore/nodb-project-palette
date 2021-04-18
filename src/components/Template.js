@@ -4,28 +4,7 @@ export default function Template(props) {
     
     return (
         
-<div class="t-body">
-<div >
-&nbsp;    
-</div>
-<div style={{ backgroundColor: props.templateColor[0] }}>
-&nbsp;
-</div>
-<div style={{ backgroundColor: props.templateColor[1] }}>
-&nbsp;
-</div>
-<div style={{ backgroundColor: props.templateColor[2] }}>
-&nbsp;
-</div>
-<div style={{ backgroundColor: props.templateColor[3] }}>
-&nbsp;
-</div>
-<div style={{ backgroundColor: props.templateColor[4] }}>
-&nbsp;
-</div>
-
-
-
+<div>
 <div class="wrapper ">
   <div class="sidebar template-col-default mr-2" ata-color="white" style={{backgroundColor: props.templateColor[2]}} data-active-color="danger">
     <div class="logo">

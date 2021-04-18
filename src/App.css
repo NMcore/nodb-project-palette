@@ -1,6 +1,7 @@
 body{
   background-color: #111;
   font: normal 1em 'Quicksand', helvetica, arial, sans-serif;
+  letter-spacing: 1px;
 }
 main{
   width: 100%;
@@ -46,11 +47,7 @@ main{
   text-decoration: underline!important;
 }
 
-.projects-container{
-  background-color: #222;
-  min-height: 10rem;
-  max-height: 10rem;
-}
+
 
 @media screen and (max-width: 813px) {  
 
@@ -84,22 +81,6 @@ main{
 
 /* End top nav */
 
-
-
-
-
-
-
-
-
-
-
-
-.projects-container{
- min-height: 10rem;
- display: flex;
-}
-
 section{
   padding: 0 0 0 1rem;
   line-height: 2rem;   
@@ -120,15 +101,9 @@ section{
 
 .project-pal-nav{
   min-height: auto;
-  padding:.5rem;
   width:100%;
-  background-color:darkgrey;
+  /* background-color:darkgrey; */
   display: flex;
-}
-
-.project-dropdown{
-  width:50%;
-  text-align: center;
 }
 
 .project-color-button{
@@ -136,12 +111,23 @@ section{
   background-color: cyan;
 }
 
-.palette-color-container{
-  margin:1rem;
-  padding: 0.5rem;
-      display: inline-grid;
-  /* background-color: white; */
+.colors-sticky{
+  position: sticky;
+  top: -100px;
+  z-index: 1999;
+  background-color: #111;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding-bottom: 3px;
 }
+
+.palette-color-container{
+  display: flex;
+  overflow: auto;
+  width: auto;
+  margin:1rem 0 0 0;
+}
+
 
 @media screen and (max-width: 813px) {
   .projects-container {
@@ -152,9 +138,7 @@ section{
   }  
  
 
-  .project-pal-nav{
-    padding:0;
-  }  
+
   .popup-content{
     width:90%;
     z-index: 2000!important;
@@ -166,13 +150,6 @@ section{
 }
 
 /* card css */
-.palette-color-container{
-  display: flex;
-  overflow: auto;
-  width: auto;
-  margin:1rem 0 0 0;
-}
-
 
 .image-card{
   margin-right:1rem;
@@ -180,13 +157,9 @@ section{
   /* width: 30rem; */
 }
 
-
-.tile-card{
-  
-}
-
 .color-image{
-  width: 200px;
+  width: 150px;
+  border-radius: 15px;
 }
 
 /*modal*/
@@ -254,21 +227,6 @@ section{
  
 }
 
-.project-button {
-  width: 60px;
-  height: 10rem;
-  background: transparent;
-  border: 0;
-  outline: none!important;
-}
-    
-.project-button svg {
-  width: 40px;
-  height: 55px;
-  /* background-color: #ffffff; */
-}
-
-
 @media screen and (max-width: 813px) {
   .project-button {
     width: 100%;
@@ -290,13 +248,71 @@ section{
 }
 
 .fa-lock{
+  font-size: 18px
+}
+
+.fa-unlock-alt {
   font-size: 22px
 }
+
+
 
 .fa-lock:hover{
   color:#6bd098!important;
 }
 
+.btn-custom{
+color: #c3c3c3!important
+}
+
 .text-light{
   color:#66615B!important;  
+}
+
+.projects-container{
+  display: flex;
+  background-color: #222;
+  border-radius: 15px;
+  min-height: 15rem;
+  /* max-height: 10rem; */
+}
+
+.project-button {
+  width: 60px;
+  height: 15rem;
+  background: transparent;
+  border: 0;
+  outline: none!important;
+}
+    
+.project-button svg {
+  width: 40px;
+  height: 55px;
+  /* background-color: #ffffff; */
+}
+
+.grid-1 {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto auto auto auto;
+}
+
+.selected-box{
+  width:100px;
+  height:60px;
+  border-radius: 15px;
+  margin:auto;
+  text-align: center;
+  line-height: 60px;
+  color: #c3c3c3;
+}
+
+.hide-extra{
+  overflow: hidden;
+  height: 60px;
+  text-overflow: initial;
+    white-space: initial;
+    display: block;
+    -webkit-line-clamp: initial;
+    -webkit-box-orient: initial;
 }

@@ -117,7 +117,7 @@ class App extends Component {
 
           </div>
         </div>
-          <div className="container">
+          <div className="container colors-sticky ">
             
               <Colors
                 clearTemplateColor={this.clearTemplateColor}
@@ -126,8 +126,8 @@ class App extends Component {
                 colors={this.state.colors}
                 updateProjects={this.updateProjects}
               />
-          
           </div>
+        
 
           <Template
               templateColor={this.state.templateColor}
