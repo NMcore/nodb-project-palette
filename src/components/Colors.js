@@ -44,9 +44,9 @@ export default class Colors extends Component {
         <div key={i} className="image-card">
           <div className="tile-card">
           <img className="color-image" alt={color.name.value} src={color.image.named} />
-          
-          <span onClick={ () => this.handleClick(color.name.value, color.name.closest_named_hex) } class="fa fa-unlock-alt ml-2 text-light"></span> 
-          <span onClick={ () => this.props.templateColor(color.name.closest_named_hex) } class="fa fa-eyedropper ml-3 text-light"></span>
+          <span onClick={ () => this.handleClick(color.name.value, color.name.closest_named_hex) } class="fa fa-unlock-alt text-light"></span> 
+          <span onClick={ () => this.props.templateColor(color.name.closest_named_hex) } class="fa fa-eyedropper ml-2 text-light"></span>
+          <span onClick={ () => this.props.fontLightDark() } class="fa fa-bolt ml-2 text-light"></span>
           <span class="ml-3 text-light">{color.name.closest_named_hex}</span>
           </div>
           <div className="tile-color">

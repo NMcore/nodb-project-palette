@@ -1448,7 +1448,7 @@ p.description {
 
 .text-primary,
 a.text-primary:focus, a.text-primary:hover {
-  color: #51cbce !important; }
+  color: #51cbce; }
 
 .text-info,
 a.text-info:focus, a.text-info:hover {
@@ -3024,7 +3024,8 @@ License - nucleoapp.com/license/
   .sidebar .sidebar-wrapper,
   .off-canvas-sidebar .sidebar-wrapper {
     position: relative;
-    height: calc(100vh - 75px);
+    background-color: white;
+    height: calc(153vh - 75px);
     overflow: auto;
     width: 260px;
     z-index: 4;
@@ -3140,7 +3141,7 @@ License - nucleoapp.com/license/
     .off-canvas-sidebar .logo a.logo-mini {
       opacity: 1;
       float: left;
-      width: 34px;
+      width: 50px;
       text-align: center;
       margin-left: 10px;
       margin-right: 12px; }

@@ -4,8 +4,8 @@ export default function Template(props) {
     
     return (
         
-<div>
-<div class="wrapper ">
+<div >
+<div class="wrapper">
   <div class="sidebar template-col-default mr-2" ata-color="white" style={{backgroundColor: props.templateColor[2]}} data-active-color="danger">
     <div class="logo">
       <a href="https://www.creative-tim.com" class="simple-text logo-mini">
@@ -15,16 +15,15 @@ export default function Template(props) {
         
       </a>
       <a href="https://www.creative-tim.com" class="simple-text logo-normal" style={{color: props.templateTextColor[0]}}>
-        Billie Eilish
-
+        Ted Logan
       </a>
     </div>
-    <div class="sidebar-wrapper">
+    <div class="sidebar-wrapper" style={{backgroundColor: props.templateColor[2]}}>
       <ul class="nav">
-        <li class="active ">
+        <li class="active">
           <a href="./dashboard.html">
-            <i class="nc-icon nc-bank"></i>
-            <p>Dashboard</p>
+            <i class="nc-icon nc-bank" style={{color: props.templateColor[3]}}></i>
+            <p style={{color: props.templateColor[3]}}>Dashboard</p>
           </a>
         </li>
         <li>
@@ -36,7 +35,7 @@ export default function Template(props) {
         <li>
           <a href="./map.html">
             <i style={{color: props.templateTextColor[0]}} class="nc-icon nc-pin-3"></i>
-            <p style={{color: props.templateTextColor[0]}}>Maps</p>
+            <p style={{color: props.templateTextColor[0]}}>Where am I?</p>
           </a>
         </li>
         <li>
@@ -54,13 +53,13 @@ export default function Template(props) {
         <li>
           <a href="./tables.html">
             <i style={{color: props.templateTextColor[0]}} class="nc-icon nc-tile-56"></i>
-            <p style={{color: props.templateTextColor[0]}}>Table List</p>
+            <p style={{color: props.templateTextColor[0]}}>Complicated things</p>
           </a>
         </li>
         <li>
           <a href="./typography.html">
             <i style={{color: props.templateTextColor[0]}} class="nc-icon nc-caps-small"></i>
-            <p style={{color: props.templateTextColor[0]}}>Typography</p>
+            <p style={{color: props.templateTextColor[0]}}>Words</p>
           </a>
         </li>
         <li class="active-pro">
@@ -83,7 +82,7 @@ export default function Template(props) {
               <span class="navbar-toggler-bar bar3"></span>
             </button>
           </div>
-          <a class="navbar-brand" style={{color: props.templateTextColor[0]}} href="javascript:;">WARP 2</a>
+          <a class="navbar-brand" style={{color: props.templateTextColor[0]}} href="javascript:;">Strange Things At The Circle K - Dashboard</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
           aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -168,8 +167,8 @@ export default function Template(props) {
                 </div>
                 <div class="col-7 col-md-8">
                   <div class="numbers">
-                    <p class="card-category">Revenue</p>
-                    <p class="card-title">$ 1,345</p>
+                    <p class="card-category">Team Revenue</p>
+                    <p class="card-title">$0,005</p>
                   </div>
                 </div>
               </div>
@@ -194,8 +193,8 @@ export default function Template(props) {
                 </div>
                 <div class="col-7 col-md-8">
                   <div class="numbers">
-                    <p class="card-category">Errors</p>
-                    <p class="card-title">23</p>
+                    <p class="card-category">Scott's Tots bugs</p>
+                    <p class="card-title">232</p>
                   </div>
                 </div>
               </div>
@@ -215,13 +214,13 @@ export default function Template(props) {
               <div class="row">
                 <div class="col-5 col-md-4">
                   <div class="icon-big text-center icon-warning">
-                    <i class="nc-icon nc-favourite-28 text-primary"></i>
+                    <i class="nc-icon nc-favourite-28 " style={{color: props.templateColor[4]}}></i>
                   </div>
                 </div>
                 <div class="col-7 col-md-8">
                   <div class="numbers">
-                    <p class="card-category">Followers</p>
-                    <p class="card-title">+45K</p>
+                    <p class="card-category">Circle K Commits</p>
+                    <p class="card-title">+107</p>
                   </div>
                 </div>
               </div>
@@ -240,11 +239,11 @@ export default function Template(props) {
         <div class="col-md-12">
           <div class="card ">
             <div class="card-header ">
-              <h5 class="card-title">Users Behavior</h5>
+              <h5 class="card-title">Fancy Charts</h5>
               <p class="card-category">24 Hours performance</p>
             </div>
             <div class="card-body ">
-              <canvas id="chartHours" width="400" height="100"></canvas>
+              <canvas id="chartHours" width="400" height="100" ></canvas>
             </div>
             <div class="card-footer ">
               <hr />
@@ -259,8 +258,8 @@ export default function Template(props) {
         <div class="col-md-4">
           <div class="card ">
             <div class="card-header ">
-              <h5 class="card-title">Email Statistics</h5>
-              <p class="card-category">Last Campaign Performance</p>
+              <h5 class="card-title">Executives love dashboards</h5>
+              <p class="card-category">Most are useless like this:</p>
             </div>
             <div class="card-body ">
               <canvas id="chartEmail"></canvas>
@@ -282,20 +281,20 @@ export default function Template(props) {
         <div class="col-md-8">
           <div class="card card-chart">
             <div class="card-header">
-              <h5 class="card-title">NASDAQ: AAPL</h5>
-              <p class="card-category">Line Chart with Points</p>
+              <h5 class="card-title">Friends that won't stop talking about Bitcoin:</h5>
+              <p class="card-category">Line Chart of annoyance:</p>
             </div>
             <div class="card-body">
               <canvas id="speedChart" width="400" height="100"></canvas>
             </div>
             <div class="card-footer">
               <div class="chart-legend">
-                <i class="fa fa-circle text-info"></i> Tesla Model S
-                <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                <i class="fa fa-circle text-info"></i> Justin
+                <i class="fa fa-circle text-warning"></i> Richard
               </div>
               <hr />
               <div class="card-stats">
-                <i class="fa fa-check"></i> Data information certified
+                <i class="fa fa-check"></i> Certified annyoing friends
               </div>
             </div>
           </div>

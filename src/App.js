@@ -16,10 +16,23 @@ class App extends Component {
       index: 0,
       projects: [],
       templateColor: [],
-      templateTextColor: ["#66615B",],
+      fontLightDark: true,
+      templateTextColor: ["#66615B"],
     }
 
   }
+
+  fontLightDark = () => {
+    this.setState(prevState => ({
+      fontLightDark: !prevState.fontLightDark
+    }));
+    if(this.state.fontLightDark === true){
+      this.setState({templateTextColor: ["#ffffff"]})
+    } else{
+      this.setState({templateTextColor: ["#66615B"]})
+    }
+  }
+
 
   templateColor = (hex) => {
     const newColors = [...this.state.templateColor];
@@ -29,7 +42,6 @@ class App extends Component {
   }
 
   clearTemplateColor = () => {
-    console.log('happy')
     this.setState({templateColor: []})
     
   }
@@ -120,6 +132,7 @@ class App extends Component {
           <div className="container colors-sticky ">
             
               <Colors
+                fontLightDark={this.fontLightDark}
                 clearTemplateColor={this.clearTemplateColor}
                 templateColor={this.templateColor}
                 index={this.state.index}

@@ -8,7 +8,6 @@ main{
 }
 
 .container{
-  /* display: flex; */
   position: relative;
   min-height: 4rem;
 }
@@ -46,8 +45,6 @@ main{
 
   text-decoration: underline!important;
 }
-
-
 
 @media screen and (max-width: 813px) {  
 
@@ -136,8 +133,6 @@ section{
   projects-container {
     flex-direction: column;
   }  
- 
-
 
   .popup-content{
     width:90%;
@@ -210,8 +205,7 @@ section{
 .popup-content{
   border-radius: 10px;
 }
-
-
+/*modal*/
 
 .navbar-transparent-template{
   box-shadow: none;
@@ -223,14 +217,34 @@ section{
 }
 
 .template-col-default{
-  background-color:#ffffff;
- 
+  background-color:#ffffff; 
 }
+
+.project-button {
+  width: 60px;
+  height: 15rem;
+  background: transparent;
+  border: 0;
+  outline: none!important;
+}
+
+.project-button svg {
+  width: 40px;
+  height: 55px;
+  /* background-color: #ffffff; */
+}
+
+.grid-1 {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto auto auto auto;
+}
+
 
 @media screen and (max-width: 813px) {
   .project-button {
     width: 100%;
-    height: 100px;
+    height: 3rem;
     background: transparent;
     border: 0;
     outline: none!important;
@@ -242,8 +256,22 @@ section{
     transform: rotate(90deg);
     /* background-color: #ffffff; */
   }
-  .d-flex{
-    flex-direction: column;
+  .d-flex-pro{
+    flex-direction: row!important;
+  }
+
+  .d-flex-color{
+    flex-direction: column!important;
+  }  
+
+  .grid-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .colors-sticky{
+    top: -56px;
   }
 }
 
@@ -252,10 +280,10 @@ section{
 }
 
 .fa-unlock-alt {
-  font-size: 22px
+  font-size: 18px
 }
 
-
+/*most of the overrides are here*/
 
 .fa-lock:hover{
   color:#6bd098!important;
@@ -277,25 +305,7 @@ color: #c3c3c3!important
   /* max-height: 10rem; */
 }
 
-.project-button {
-  width: 60px;
-  height: 15rem;
-  background: transparent;
-  border: 0;
-  outline: none!important;
-}
-    
-.project-button svg {
-  width: 40px;
-  height: 55px;
-  /* background-color: #ffffff; */
-}
 
-.grid-1 {
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: auto auto auto auto;
-}
 
 .selected-box{
   width:100px;
@@ -315,4 +325,8 @@ color: #c3c3c3!important
     display: block;
     -webkit-line-clamp: initial;
     -webkit-box-orient: initial;
+}
+
+.nc-favourite-28{
+  color: #1DC7EA;
 }
