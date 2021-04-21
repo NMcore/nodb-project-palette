@@ -28,8 +28,7 @@ export default class Colors extends Component {
   }
 
   handleClick = (colorName, colorValue) => {
-    // console.log(colorName)
-    const {index} = this.props;
+    const { index } = this.props;
     axios
       .put(`/api/color/${index}`, { colorName, colorValue })
       .then((response) => {
@@ -40,19 +39,13 @@ export default class Colors extends Component {
 
   renderColors = () => {
     const mappedColors = this.state.colors.map((color, i) => (
-
-        <div key={i} className="image-card">
-          <div className="tile-card">
-          <img className="color-image" alt={color.name.value} src={color.image.named} />
-          <span onClick={ () => this.handleClick(color.name.value, color.name.closest_named_hex) } class="fa fa-unlock-alt text-light"></span> 
-          <span onClick={ () => this.props.templateColor(color.name.closest_named_hex) } class="fa fa-eyedropper ml-2 text-light"></span>
-          <span onClick={ () => this.props.fontLightDark() } class="fa fa-bolt ml-2 text-light"></span>
-          <span class="ml-3 text-light">{color.name.closest_named_hex}</span>
-          </div>
-          <div className="tile-color">
-            {/* {vals.name.value} */}
-          </div>
-        </div>
+      <div key={i} className="image-card">
+        <img className="color-image" alt={color.name.value} src={color.image.named} />
+        <span onClick={() => this.handleClick(color.name.value, color.name.closest_named_hex)} class="fa fa-unlock-alt text-light"></span>
+        <span onClick={() => this.props.templateColor(color.name.closest_named_hex)} class="fa fa-eyedropper ml-2 text-light"></span>
+        <span onClick={() => this.props.fontLightDark()} class="fa fa-bolt ml-2 text-light"></span>
+        <span class="ml-3 text-light">{color.name.closest_named_hex}</span>
+      </div>
     ))
     return mappedColors;
   };
@@ -65,12 +58,12 @@ export default class Colors extends Component {
     return (
       <div className="mb-2">
         <div class="palette-color-container">
-          {this.renderColors()}        
+          {this.renderColors()}
         </div>
         <div className="project-pal-nav ml-auto mr-auto">
-              <div className="col-md-6 text-center"><button className="btn btn-default col-md-6 btn-round" onClick={this.getColors}><i class="fa fa-refresh mr-2 btn-custom"></i>Get Colors</button></div>
-              <div className="col-md-6 text-center"><button className="btn btn-default col-md-6 btn-round" onClick={this.props.clearTemplateColor}><i class="fa fa-times mr-2 btn-custom"></i>Reset</button></div>
-        </div>            
+          <div className="col-md-6 text-center"><button className="btn btn-default col-md-6 btn-round" onClick={this.getColors}><i class="fa fa-refresh mr-2 btn-custom"></i>Get Colors</button></div>
+          <div className="col-md-6 text-center"><button className="btn btn-default col-md-6 btn-round" onClick={this.props.clearTemplateColor}><i class="fa fa-times mr-2 btn-custom"></i>Reset</button></div>
+        </div>
       </div>
     )
   }

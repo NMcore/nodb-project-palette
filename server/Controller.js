@@ -3,8 +3,8 @@ const projects = [
     id: 0,
     projectName: "Most Excellent Website from the future",
     createdBy: "Bill S. Preston, Esq",
-    description: "Create the greatest website ever made to unite the world. Possibly similar to the landmark website spacejam.com. ",
-    notes:"Why is the future not as great as the 80's?",
+    description: "Create the most excellent website ever made to unite the world. Possibly similar to the landmark website spacejam.com.",
+    notes: "Why is the future not as great as the '80s?",
     endDate: "1-23-1989",
     color: [],
   },
@@ -13,15 +13,14 @@ const projects = [
     projectName: "It's computers...",
     createdBy: "Ted Theodore Logan",
     description: "Everything is different, but the same... things are more moderner than before... bigger, and yet smaller... it's computers... ",
-    notes:"",
-    endDate: "",    
+    notes: "",
+    endDate: "",
     color: [],
   },
 ];
 
 
 let id = 2;
-
 
 module.exports = {
   read: (req, res) => {
@@ -46,16 +45,14 @@ module.exports = {
 
   update: (req, res) => {
     const { id } = req.params;
-    const { projectName, createdBy, description, notes, endDate  } = req.body;
-
+    const { projectName, createdBy, description, notes, endDate } = req.body;
     const nameRecall = projects[id].projectName;
     const createdByRecall = projects[id].createdBy;
     const descriptionRecall = projects[id].description;
     const notesByRecall = projects[id].notes;
-    const endDateecall = projects[id].endDate;    
-    
+    const endDateecall = projects[id].endDate;
+
     const colors = projects[id].color.map(color => color)
-    // const index = projects.filter((project) => project.id == id)
     projects[id] = {
       id,
       projectName: projectName || nameRecall,
@@ -70,26 +67,23 @@ module.exports = {
 
   remove: (req, res) => {
     const { id } = req.params;
-    // const index = projects.findIndex((project) => project.id == id)
     projects.splice(id, 1)
     res.status(200).send(projects)
 
-  },  
+  },
 
   updateColor: (req, res) => {
     const { id } = req.params;
     const { colorName, colorValue } = req.body;
-    // const index = projects.findIndex((project) => project.id == id)
-    projects[id].color.push({name:colorName, value: colorValue})
+    projects[id].color.push({ name: colorName, value: colorValue })
     res.status(200).send(projects);
   },
 
   removeColor: (req, res) => {
     const { id } = req.params;
     const { removeColor } = req.query;
-    // const index = projects.findIndex((project) => project.id == id)
     const colorIndex = projects[id].color.findIndex(color => color.name == removeColor)
-    projects[id]["color"].splice(colorIndex,1)
+    projects[id]["color"].splice(colorIndex, 1)
     res.status(200).send(projects)
-  },  
+  },
 };

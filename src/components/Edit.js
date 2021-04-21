@@ -12,10 +12,10 @@ class Edit extends Component {
       createdBy: '',
       description: '',
       notes: '',
-      endDate: '',      
+      endDate: '',
     }
   }
-  
+
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -36,38 +36,32 @@ class Edit extends Component {
   }
 
   render() {
-    const {index} = this.props;
+    const { index } = this.props;
     return (
       <div>
-      <Popup
-            trigger={<a className="top-menu-links"><i class="nc-icon nc-scissors mr-2 text-warning"></i>Edit</a>}
-            modal
-            nested
-        >
-        {close => (
+        <Popup
+          trigger={<a className="top-menu-links"><i class="nc-icon nc-scissors mr-2 text-warning"></i>Edit</a>}
+          modal
+          nested>
+          {close => (
             <div className="modalnav">
-                <button className="closenav" onClick={close}>
-                    &times;
-                </button>
-                <div className="headernav"> Edit New Project ( {this.props.projectInfo?.projectName} )</div>
-                <div className="contentnav">
-                  <Form 
+              <button className="closenav" onClick={close}>&times;</button>
+              <div className="headernav">Edit New Project ( {this.props.projectInfo?.projectName} )</div>
+              <div className="contentnav">
+                <Form
                   projectInfo={this.props.projectInfo}
-                  handleChange={this.handleChange} 
+                  handleChange={this.handleChange}
                   handleClick={this.handleClick}
-                  />
-                </div>
-                <div className="actionsnav">
-                    <button className="btn btn-warning mr-2"
-                    onClick={() => { this.handleClick(index); close()}}>Edit Project!</button> 
-                    <button
-                        className="btn btn-light mr-1" onClick={() => {close()}}>
-                        Cancel
-                </button>
-                </div>
+                />
+              </div>
+              <div className="actionsnav">
+                <button className="btn btn-warning mr-2"
+                  onClick={() => { this.handleClick(index); close() }}>Edit Project!</button>
+                <button className="btn btn-light mr-1" onClick={() => { close() }}>Cancel</button>
+              </div>
             </div>
-        )}
-      </Popup>      
+          )}
+        </Popup>
       </div>
     )
   }
