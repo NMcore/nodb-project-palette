@@ -40,7 +40,7 @@ class Edit extends Component {
     return (
       <div>
         <Popup
-          trigger={<a className="top-menu-links"><i class="nc-icon nc-scissors mr-2 text-warning"></i>Edit</a>}
+          trigger={<button className="top-menu-links"><i className="nc-icon nc-scissors mr-2 text-warning"></i>Edit</button>}
           modal
           nested>
           {close => (

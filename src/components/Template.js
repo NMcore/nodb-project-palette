@@ -8,7 +8,7 @@ export default function Template(props) {
           <div className="logo">
             <a href="/" className="simple-text logo-mini">
               <div className="logo-image-small">
-                <img src="../assets/img/logo-small.png" />
+                <img alt="Bill and Ted" src="../assets/img/logo-small.png" />
               </div>
             </a>
             <a href="/" className="simple-text logo-normal" style={{ color: props.templateTextColor[0] }}>
@@ -79,19 +79,19 @@ export default function Template(props) {
                     <span className="navbar-toggler-bar bar3"></span>
                   </button>
                 </div>
-                <a className="navbar-brand" style={{ color: props.templateTextColor[0] }} href="javascript:;">Strange Things At The Circle K - Dashboard</a>
+                <a className="navbar-brand" style={{ color: props.templateTextColor[0] }} href="/">Strange Things At The Circle K - Dashboard</a>
               </div>
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+              {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                 aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-bar navbar-kebab"></span>
                 <span className="navbar-toggler-bar navbar-kebab"></span>
                 <span className="navbar-toggler-bar navbar-kebab"></span>
-              </button>
+              </button> */}
               <div className="collapse navbar-collapse justify-content-end" id="navigation">
 
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <a className="nav-link btn-magnify" href="javascript:;">
+                    <a className="nav-link btn-magnify" href="/">
                       <i style={{ color: props.templateTextColor[0] }} className="nc-icon nc-layout-11"></i>
                       <p>
                         <span className="d-lg-none d-md-block">Stats</span>
@@ -100,20 +100,20 @@ export default function Template(props) {
                   </li>
                   <li className="nav-item btn-rotate dropdown">
                     <a style={{ color: props.templateTextColor[0] }} className="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      data-toggle="dropdown">
                       <i style={{ color: props.templateTextColor[0] }} className="nc-icon nc-bell-55"></i>
                       <p>
                         <span className="d-lg-none d-md-block">Some Actions</span>
                       </p>
                     </a>
                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                      <a className="dropdown-item" href="#">Action</a>
-                      <a className="dropdown-item" href="#">Another action</a>
-                      <a className="dropdown-item" href="#">Something else here</a>
+                      <a className="dropdown-item" href="/">Action</a>
+                      <a className="dropdown-item" href="/">Another action</a>
+                      <a className="dropdown-item" href="/">Something else here</a>
                     </div>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link btn-rotate" href="javascript:;">
+                    <a className="nav-link btn-rotate" href="/">
                       <i style={{ color: props.templateTextColor[0] }} className="nc-icon nc-settings-gear-65"></i>
                       <p>
                         <span className="d-lg-none d-md-block">Account</span>
@@ -132,13 +132,13 @@ export default function Template(props) {
                     <div className="row">
                       <div className="col-5 col-md-4">
                         <div className="icon-big text-center icon-warning">
-                          <i className="nc-icon nc-globe text-warning"></i>
+                          <i className="nc-icon nc-atom text-warning"></i>
                         </div>
                       </div>
                       <div className="col-7 col-md-8">
                         <div className="numbers">
-                          <p className="card-category">Capacity</p>
-                          <p className="card-title">150GB</p>
+                          <p className="card-category">React Level</p>
+                          <p className="card-title">Padawan</p>
                         </div>
                       </div>
                     </div>
@@ -184,7 +184,7 @@ export default function Template(props) {
                     <div className="row">
                       <div className="col-5 col-md-4">
                         <div className="icon-big text-center icon-warning">
-                          <i className="nc-icon nc-vector text-danger"></i>
+                          <i className="nc-icon nc-ambulance text-danger"></i>
                         </div>
                       </div>
                       <div className="col-7 col-md-8">

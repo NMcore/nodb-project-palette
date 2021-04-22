@@ -41,10 +41,10 @@ export default class Colors extends Component {
     const mappedColors = this.state.colors.map((color, i) => (
       <div key={i} className="image-card">
         <img className="color-image" alt={color.name.value} src={color.image.named} />
-        <span onClick={() => this.handleClick(color.name.value, color.name.closest_named_hex)} class="fa fa-unlock-alt text-light"></span>
-        <span onClick={() => this.props.templateColor(color.name.closest_named_hex)} class="fa fa-eyedropper ml-2 text-light"></span>
-        <span onClick={() => this.props.fontLightDark()} class="fa fa-bolt ml-2 text-light"></span>
-        <span class="ml-3 text-light">{color.name.closest_named_hex}</span>
+        <span onClick={() => this.handleClick(color.name.value, color.name.closest_named_hex)} className="fa fa-unlock-alt text-light"></span>
+        <span onClick={() => this.props.templateColor(color.name.closest_named_hex)} className="fa fa-eyedropper ml-2 text-light"></span>
+        <span onClick={() => this.props.fontLightDark()} className="fa fa-bolt ml-2 text-light"></span>
+        <span className="ml-3 text-light">{color.name.closest_named_hex}</span>
       </div>
     ))
     return mappedColors;
@@ -57,12 +57,12 @@ export default class Colors extends Component {
   render() {
     return (
       <div className="mb-2">
-        <div class="palette-color-container">
+        <div className="palette-color-container">
           {this.renderColors()}
         </div>
         <div className="project-pal-nav ml-auto mr-auto">
-          <div className="col-md-6 text-center"><button className="btn btn-default col-md-6 btn-round" onClick={this.getColors}><i class="fa fa-refresh mr-2 btn-custom"></i>Get Colors</button></div>
-          <div className="col-md-6 text-center"><button className="btn btn-default col-md-6 btn-round" onClick={this.props.clearTemplateColor}><i class="fa fa-times mr-2 btn-custom"></i>Reset</button></div>
+          <div className="col-md-6 text-center"><button className="btn btn-default col-md-6 btn-round" onClick={this.getColors}><i className="fa fa-refresh mr-2 btn-custom"></i>Get Colors</button></div>
+          <div className="col-md-6 text-center"><button className="btn btn-default col-md-6 btn-round" onClick={this.props.clearTemplateColor}><i className="fa fa-times mr-2 btn-custom"></i>Reset</button></div>
         </div>
       </div>
     )

@@ -3011,7 +3011,8 @@ License - nucleoapp.com/license/
   width: 260px;
   left: 0;
   /* z-index: 1030; */
-  border-right: 1px solid #ddd; }
+  /* border-right: 1px solid #ddd;  */
+}
 
 
   @media screen and (max-width: 813px) {
@@ -3159,7 +3160,8 @@ License - nucleoapp.com/license/
       right: 15px;
       height: 1px;
       width: calc(100% - 30px);
-      background-color: rgba(255, 255, 255, 0.5); }
+      /* background-color: rgba(255, 255, 255, 0.5);  */
+    }
     .sidebar .logo p,
     .off-canvas-sidebar .logo p {
       float: left;
@@ -3560,7 +3562,7 @@ License - nucleoapp.com/license/
   .fixed-plugin .adjustments-line .dropdown-menu > li.adjustments-line > a {
     padding-right: 0;
     padding-left: 0;
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
     border-radius: 0;
     margin: 0; }
   .fixed-plugin .dropdown-menu > li > a.img-holder {

@@ -39,6 +39,9 @@ main {
 .top-menu-links{
   color: #c3c3c3!important;
   cursor:pointer;
+  background-color: transparent;
+  border: 0;
+  outline: none!important;
 }
 
 .top-menu-links:hover {
@@ -86,6 +89,7 @@ section {
 
 .projects-des{
   display: block;
+  width: 100%;
 }
 
 .project-colors-container {
@@ -236,6 +240,17 @@ section {
   grid-template-rows: auto auto auto auto;
 }
 
+.text-info{
+  word-break: break-word;
+}
+
+.project-min-width{
+  min-width: 64vw;
+  max-width: 64vw;
+  display: block;
+}
+
+
 @media screen and (max-width: 813px) {
   .project-button {
     width: 100%;
@@ -267,6 +282,14 @@ section {
   
   .colors-sticky {
     top: -56px;
+  }
+  .text-info{
+    word-break:normal;
+  }
+
+  .project-min-width {
+      min-width: 95vw;
+      display: block;
   }
 }
 

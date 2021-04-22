@@ -19,7 +19,7 @@ class Delete extends Component {
     return (
       <div>
         <Popup
-          trigger={<a className="top-menu-links"><i class="nc-icon nc-simple-remove mr-2 text-danger"></i>Delete</a>}
+          trigger={<button className="top-menu-links"><i className="nc-icon nc-simple-remove mr-2 text-danger"></i>Delete</button>}
           modal
           nested>
           {close => (

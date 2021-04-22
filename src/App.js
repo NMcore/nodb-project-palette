@@ -83,26 +83,26 @@ class App extends Component {
         <header className="navbar">
           <div className="container">
             <div className="header-logo">
-              <i class="nc-icon nc-palette mr-2 text-success palette-logo"></i>Poject Palette
+              <i className="nc-icon nc-palette mr-2 text-success palette-logo"></i>Poject Palette
             </div>
             <div>
               <nav className="header-nav">
                 <ul className="navMenu">
-                  <li class="navLinks"><Add
+                  <li className="navLinks"><Add
                     toEnd={this.toEnd}
                     updateProjects={this.updateProjects} />
                   </li>
-                  <li class="navLinks"><Edit
+                  <li className="navLinks"><Edit
                     projectInfo={this.state.projects[this.state.index]}
                     index={this.state.index}
                     updateProjects={this.updateProjects} />
                   </li>
-                  <li class="navLinks"><Delete
+                  <li className="navLinks"><Delete
                     projectInfo={this.state.projects[this.state.index]}
                     index={this.state.index}
                     updateProjects={this.updateProjects} />
                   </li>
-                  <li class="navLinks sub"><i class="nc-icon nc-bulb-63 mr-2 text-light"></i>Projects(<span className="text-info">{this.state.projects.length}</span>)</li>
+                  <li className="navLinks sub"><i className="nc-icon nc-bulb-63 mr-2 text-light"></i>Projects(<span className="text-info">{this.state.projects.length}</span>)</li>
                 </ul>
               </nav>
             </div>
