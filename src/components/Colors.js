@@ -40,11 +40,13 @@ export default class Colors extends Component {
   renderColors = () => {
     const mappedColors = this.state.colors.map((color, i) => (
       <div key={i} className="image-card">
-        <img className="color-image" alt={color.name.value} src={color.image.named} />
-        <span onClick={() => this.handleClick(color.name.value, color.name.closest_named_hex)} className="fa fa-unlock-alt text-light"></span>
-        <span onClick={() => this.props.templateColor(color.name.closest_named_hex)} className="fa fa-eyedropper ml-2 text-light"></span>
-        <span onClick={() => this.props.fontLightDark()} className="fa fa-bolt ml-2 text-light"></span>
-        <span className="ml-3 text-light">{color.name.closest_named_hex}</span>
+        <div className="tile-card">
+          <img className="color-image" alt={color.name.value} src={color.image.named} />
+          <span onClick={() => this.handleClick(color.name.value, color.name.closest_named_hex)} className="fa fa-unlock-alt text-light"></span>
+          <span onClick={() => this.props.templateColor(color.name.closest_named_hex, color.name.distance.toString())} className="fa fa-eyedropper ml-2 text-light"></span>
+          <span onClick={() => this.props.fontLightDark()} className="fa fa-bolt ml-2 text-light"></span>
+          <span className="ml-3 text-light">{color.name.closest_named_hex}</span>
+        </div>
       </div>
     ))
     return mappedColors;

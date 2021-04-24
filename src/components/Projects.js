@@ -2,13 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios';
 
 class Projects extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          items: this.props.projectInfo?.color.name,
-        };
-        // this.onDragEnd = this.onDragEnd.bind(this);
-      }    
     handleClick = (colorName) => {
         const { index } = this.props;
         axios
@@ -20,7 +13,6 @@ class Projects extends Component {
     }
     render() {
         return (
-            <div className="project-min-width">
             <div className="projects-des text-light d-flex w-100 pt-3 pb-3">
                 <div className="flex-row w-50 ml-2">
                     <div className="d-flex">
@@ -57,7 +49,6 @@ class Projects extends Component {
                         )
                     })}
                 </div>
-            </div>
             </div>
         )
     }

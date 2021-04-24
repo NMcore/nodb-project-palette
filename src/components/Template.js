@@ -1,10 +1,14 @@
 import React from 'react'
 
 export default function Template(props) {
+  // console.log(props.templateColor)
+  let colorBg = props.templateColor.map(a => a.color)
+  // console.log(colorBg[0],colorBg[1],colorBg[2])
+  
   return (
     <footer>
       <div className="wrapper">
-        <div className="sidebar template-col-default mr-2" style={{ backgroundColor: props.templateColor[2] }} data-active-color="danger">
+        <div className="sidebar template-col-default mr-2" style={{ backgroundColor: colorBg[2] }} data-active-color="danger">
           <div className="logo">
             <a href="/" className="simple-text logo-mini">
               <div className="logo-image-small">
@@ -15,18 +19,18 @@ export default function Template(props) {
               Ted Logan
             </a>
           </div>
-          <div className="sidebar-wrapper" style={{ backgroundColor: props.templateColor[2] }}>
+          <div className="sidebar-wrapper" style={{ backgroundColor: colorBg[2] }}>
             <ul className="nav">
               <li className="active">
                 <a href="./dashboard.html">
-                  <i className="nc-icon nc-bank" style={{ color: props.templateColor[3] }}></i>
-                  <p style={{ color: props.templateColor[3] }}>Dashboard</p>
+                  <i className="nc-icon nc-bank" style={{ color: colorBg[3] }}></i>
+                  <p style={{ color: colorBg[3] }}>Dashboard</p>
                 </a>
               </li>
               <li>
                 <a href="./icons.html">
-                  <i style={{ color: props.templateTextColor[0] }} className="nc-icon nc-diamond"></i>
-                  <p style={{ color: props.templateTextColor[0] }}>Icons</p>
+                  <i style={{ color: props.templateTextColor[0] }} className="nc-icon nc-hat-3"></i>
+                  <p style={{ color: props.templateTextColor[0] }}>Cool Hats</p>
                 </a>
               </li>
               <li>
@@ -68,8 +72,8 @@ export default function Template(props) {
             </ul>
           </div>
         </div>
-        <div className="main-panel" style={{ backgroundColor: props.templateColor[0] }}>
-          <nav style={{ backgroundColor: props.templateColor[1] }} className="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent-template">
+        <div className="main-panel" style={{ backgroundColor: colorBg[0] }}>
+          <nav style={{ backgroundColor: colorBg[1] }} className="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent-template">
             <div className="container-fluid">
               <div className="navbar-wrapper">
                 <div className="navbar-toggle">
@@ -81,14 +85,7 @@ export default function Template(props) {
                 </div>
                 <a className="navbar-brand" style={{ color: props.templateTextColor[0] }} href="/">Strange Things At The Circle K - Dashboard</a>
               </div>
-              {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-                aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-bar navbar-kebab"></span>
-                <span className="navbar-toggler-bar navbar-kebab"></span>
-                <span className="navbar-toggler-bar navbar-kebab"></span>
-              </button> */}
               <div className="collapse navbar-collapse justify-content-end" id="navigation">
-
                 <ul className="navbar-nav">
                   <li className="nav-item">
                     <a className="nav-link btn-magnify" href="/">
@@ -210,7 +207,7 @@ export default function Template(props) {
                     <div className="row">
                       <div className="col-5 col-md-4">
                         <div className="icon-big text-center icon-warning">
-                          <i className="nc-icon nc-favourite-28 " style={{ color: props.templateColor[4] }}></i>
+                          <i className="nc-icon nc-favourite-28 " style={{ color: colorBg[4] }}></i>
                         </div>
                       </div>
                       <div className="col-7 col-md-8">
